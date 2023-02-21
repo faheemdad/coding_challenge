@@ -18,9 +18,10 @@ class CreateIngredientsTable extends Migration
             $table->string('name');
             $table->bigInteger('qty')->unsigned();
             $table->enum('unit', ['kg']);
-            $table->double('stock_level', 10, 2)->comment('in_gram');
-            $table->enum('send_email_status', ['1','0'])->default('0');
-            $table->dateTime('send_email_date_time')->nullable();
+            $table->double('initial_stock_level', 10, 2)->comment('in_gram');
+            $table->double('current_stock_level', 10, 2)->comment('in_gram');
+            $table->enum('is_low_stock_notified', ['1','0'])->default('0');
+            $table->dateTime('is_low_stock_notified_date_time')->nullable();
             $table->timestamps();
         });
     }

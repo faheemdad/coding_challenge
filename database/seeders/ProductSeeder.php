@@ -18,10 +18,10 @@ class ProductSeeder extends Seeder
     {
         $products = ["Burger", "Pizza"];
         $ingredients = [
-            ["Onion", 10, "kg", 10000],
-            ["Potato", 12, "kg", 12000],
-            ["Beef", 6, "kg", 6000],
-            ["Chicken", 5, "kg", 5000],
+            ["Onion", 10, "kg", 10000, 10000],
+            ["Potato", 12, "kg", 12000, 12000],
+            ["Beef", 6, "kg", 6000, 6000],
+            ["Chicken", 5, "kg", 5000, 5000],
         ];
 
         foreach ($products as $each) {
@@ -34,7 +34,8 @@ class ProductSeeder extends Seeder
                 "name" => $each[0],
                 "qty" => $each[1],
                 "unit" => $each[2],
-                "stock_level" => $each[3],
+                "initial_stock_level" => $each[3],
+                "current_stock_level" => $each[4],
             ]);
             $obj->save();
         }
