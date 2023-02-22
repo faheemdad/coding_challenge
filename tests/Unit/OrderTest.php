@@ -169,7 +169,7 @@ class OrderTest extends TestCase
 
         $this->assertTrue(true);
 
-        $response->assertStatus(401);
+        $response->assertStatus(422);
 
     }
 }
